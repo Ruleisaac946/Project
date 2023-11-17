@@ -1,9 +1,12 @@
 # TopsFanClub
 
-- Marcos Barrera
-
 ## Team Members 
-- Ryan Alam 
+- Ryan Alam
+- Marcos Barrera 
+- Said Khatib
+- (Isaac, can you replace this with your full name?)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
