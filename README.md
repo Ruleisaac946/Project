@@ -4,7 +4,7 @@
 - Ryan Alam
 - Marcos Barrera 
 - Said Khatib
-- (Isaac, can you replace this with your full name?)
+- Isaac Albonetti
 
 
 This README would normally document whatever steps are necessary to get the
