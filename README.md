@@ -3,7 +3,7 @@
 ## Team Members 
 - Ryan Alam
 - Marcos Barrera 
-- Said Khatib
+- Said Khatib (sbkhatib@memphis.edu)
 - Isaac Albonetti
 
 
