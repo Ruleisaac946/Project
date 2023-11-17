@@ -1,7 +1,7 @@
 # TopsFanClub
 
 ## Team Members 
-- Ryan Alam
+- Ryan Alam (rtalam@memphis.edu)
 - Marcos Barrera 
 - Said Khatib (sbkhatib@memphis.edu)
 - Isaac Albonetti
