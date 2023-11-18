@@ -4,7 +4,7 @@
 - Ryan Alam
 - Marcos Barrera 
 - Said Khatib
-- Isaac Albonetti
+- Isaac Albonetti jlbnetti@memphis.edu
 
 
 This README would normally document whatever steps are necessary to get the
