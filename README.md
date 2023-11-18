@@ -1,10 +1,10 @@
 # TopsFanClub
 
 ## Team Members 
-- Ryan Alam
-- Marcos Barrera 
-- Said Khatib
-- Isaac Albonetti jlbnetti@memphis.edu
+- Ryan Alam (rtalam@memphis.edu)
+- Marcos Barrera (mbrrera1@memphis.edu)
+- Said Khatib (sbkhatib@memphis.edu)
+- Isaac Albonetti (jlbnetti@memphis.edu)
 
 
 This README would normally document whatever steps are necessary to get the
