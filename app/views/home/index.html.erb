@@ -1,5 +1,17 @@
-<% @posts.each do |post| %>
-    <div class = "post">
-        <%= post.content %>
-    </div>
-<% end %>
+<head>
+    <%= stylesheet_link_tag 'post' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <% @posts.each do |post| %>
+        <div class = "post card mb-3">
+            <%= post.content %>
+            <div class="butons">
+                <button><i class="bi bi-heart"></i></button>
+                <button><i class="bi bi-chat"></i></button>
+                <button><i class="bi bi-arrow-repeat"></i></button>
+            </div>
+        </div>
+    <% end %>
+</body>
