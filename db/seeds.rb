@@ -7,6 +7,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.create(name: 'Bob', email: 'bob@email.com', password: 'password')
+
+#User.create!(
+#    email:    'bob@email.com',
+#    password: 'password'
+#)
+   
+#User.create!(
+ #   email:    'alice@email.com',
+  #  password: 'password'
+#)
+
 Post.create!(
     content: "Fascinated by sloths lately! Their unhurried lifestyle is strangely relatable. Picture embracing life at a sloth's pace—no rush, just pure tranquility. They're the zen masters of the animal kingdom. Hanging out in trees has never seemed so appealing!"
 )
