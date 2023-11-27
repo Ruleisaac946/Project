@@ -2,14 +2,16 @@
 #
 # Table name: users
 #
-#  id                     :bigint           not null, primary key
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  remember_created_at    :datetime
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id                       :bigint           not null, primary key
+#  email                    :string           default(""), not null
+#  encrypted_password       :string           default(""), not null
+#  name                     :string
+#  notification_preferences :text
+#  remember_created_at      :datetime
+#  reset_password_sent_at   :datetime
+#  reset_password_token     :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #
 # Indexes
 #
@@ -19,6 +21,21 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  has_one_attached :profile_picture
+  has_one_attached :cover_photo
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+        
+  # Model validations
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+      
+  # Other model associations, methods, or validations can be added as needed
+        
+  # Example method for updating notification preferences
+  def update_notification_preferences(preferences)
+    update(notification_preferences: preferences)
+  end
 end
