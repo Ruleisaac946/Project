@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   root to: redirect('home')
   get 'home', to: 'home#index', as: 'home'
   get 'settings', to: 'settings#index', as: 'settings'
-
   resource :settings, only: [:index, :update]
+  post 'home', to: 'home#create'
+  get 'home/new', to: 'home#new', as: 'new_post'
+  get 'home/:id', to: 'home#show', as: 'post_show'
 end
 
 
