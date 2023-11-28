@@ -8,9 +8,19 @@
     .heart-btn.active {
       color: #ff0000; /* Red color for the active (liked) state */
     }
+
+    .save-btn {
+      color: #000; /* Default color for the buttons */
+    }
+    .save-btn.active {
+      color: #ffd700; /* Yellow color for the active (saved) state */
+      
+    }
+    .save-btn.active .bi-bookmark-fill {
+      color: #ffd700; /* Set the filled icon color to match the background when active */
+    }
   </style>
 </head>
-
 <h1>This will be the explore page guys!</h1>
 <%= form_tag("/explore", method: "GET") do %>
   <%= label_tag(:search_by_title, "Search by Title") %>
@@ -26,6 +36,7 @@
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
                 <button><i class="bi bi-chat"></i></button>
                 <button><i class="bi bi-arrow-repeat"></i></button>
+                <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
             </div>
         </div>
     <% end %>
@@ -37,5 +48,13 @@
             // Toggle between outline and filled heart icons
             heartIcon.classList.toggle('bi-heart-fill', button.classList.contains('active'));
             }
+
+        function toggleSave(button) {
+      button.classList.toggle('active');
+      const saveIcon = button.querySelector('.bi-bookmark');
+
+      // Toggle between outline and filled save icons
+      saveIcon.classList.toggle('bi-bookmark-fill', button.classList.contains('active'));
+    }
   </script>
 </body>
