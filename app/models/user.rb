@@ -5,6 +5,7 @@
 #  id                       :bigint           not null, primary key
 #  email                    :string           default(""), not null
 #  encrypted_password       :string           default(""), not null
+#  is_public                :boolean
 #  name                     :string
 #  notification_preferences :text
 #  remember_created_at      :datetime
