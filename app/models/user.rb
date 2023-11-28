@@ -25,7 +25,13 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_one_attached :cover_photo
 
-  has_many :posts
+  has_many(
+    :posts,
+    class_name: 'Post',
+    foreign_key: 'user_id',
+    inverse_of: :user,
+    dependent: :destroy
+  )
   has_many :reposts
   has_many :reposted_posts, through: :reposts, source: :post
   

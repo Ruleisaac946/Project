@@ -9,13 +9,13 @@
 
 #User.create(name: 'Bob', email: 'bob@email.com', password: 'password')
 
-User.create!(
+user1 = User.create!(
     name: 'Bob',
     email:    'bob@email.com',
     password: 'password'
 )
 
-User.create!(
+user2 = User.create!(
     name: 'Alice',
     email:    'alice@email.com',
     password: 'password'

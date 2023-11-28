@@ -18,7 +18,12 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Post < ApplicationRecord
-    belongs_to :user
+    belongs_to(
+        :user, 
+        class_name: 'User',
+        foreign_key: 'user_id',
+        inverse_of: :posts
+    )
     has_many :reposts
     has_many :repost_users, through: :reposts, source: :user
     validates :title, presence: true
