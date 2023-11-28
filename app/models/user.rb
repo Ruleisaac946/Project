@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
   has_one_attached :cover_photo
+
+  has_many :posts
+  has_many :reposts
+  has_many :reposted_posts, through: :reposts, source: :post
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
