@@ -18,6 +18,18 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Post < ApplicationRecord
+    def self.search(search)
+        if search 
+            content = Post.find_by(content: search)
+            if content 
+                self.where(post_id: post)
+            else
+                Post.all
+            end
+        else
+            Post.all
+        end
+    end
     belongs_to(
         :user, 
         class_name: 'User',

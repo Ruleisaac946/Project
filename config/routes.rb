@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: redirect('home')
   get 'home', to: 'home#index', as: 'home'
+  get 'explore', to: 'explore#index', as: 'explore'
   get 'settings', to: 'settings#index', as: 'settings'
   resource :settings, only: [:index, :update]
   post 'home', to: 'home#create'
