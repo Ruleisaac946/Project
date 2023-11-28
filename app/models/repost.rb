@@ -1,26 +1,24 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: reposts
 #
 #  id         :bigint           not null, primary key
-#  content    :string
-#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  post_id    :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_posts_on_user_id  (user_id)
+#  index_reposts_on_post_id  (post_id)
+#  index_reposts_on_user_id  (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (post_id => posts.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require "test_helper"
-
-class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Repost < ApplicationRecord
+  belongs_to :user
+  belongs_to :post
 end
