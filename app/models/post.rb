@@ -39,5 +39,6 @@ class Post < ApplicationRecord
     has_many :reposts
     has_many :repost_users, through: :reposts, source: :user
     validates :title, presence: true
+    # has_many :likes, as: :likeable
   
 end
