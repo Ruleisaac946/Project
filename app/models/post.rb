@@ -36,6 +36,13 @@ class Post < ApplicationRecord
         foreign_key: 'user_id',
         inverse_of: :posts
     )
+    has_many(
+        :comments, 
+        class_name: 'Comment',
+        foreign_key: 'post_id', 
+        inverse_of: :post, 
+        dependent: :destroy
+    )
     has_many :reposts
     has_many :repost_users, through: :reposts, source: :user
     validates :title, presence: true

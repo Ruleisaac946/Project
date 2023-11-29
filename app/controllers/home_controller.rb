@@ -3,11 +3,14 @@ class HomeController < ApplicationController
     before_action :require_permission, except: [:index, :show, :new, :create]
     def index 
         @posts = Post.order(created_at: :asc)
+        # @individualPost = Post.find(params[:p])
+        # @comments = @individualPost.comments
         render :index 
     end 
 
     def show
         @post = Post.find(params[:id])
+        @comments = @post.comments
         render :show 
     end 
 

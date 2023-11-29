@@ -33,6 +33,13 @@ class User < ApplicationRecord
     inverse_of: :user,
     dependent: :destroy
   )
+  has_many(
+    :comments,
+    class_name: 'Comment',
+    foreign_key: 'user_id', 
+    inverse_of: :user, 
+    dependent: :destroy 
+  )
   has_many :reposts
   has_many :reposted_posts, through: :reposts, source: :post
   
