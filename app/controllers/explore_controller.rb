@@ -1,10 +1,9 @@
 class ExploreController < ApplicationController
     def index
-        @posts = Post.search(params[:search])
+        @posts = Post.all
+        if params[:search_by_title] && params[:search_by_title] != ""
+            @posts = @posts.where("title like ?", "%#{params[:search_by_title]}%")
+        end
         render :index
     end
-
-    def post_params 
-        params.require(:post).permit(:content)
-    end 
 end

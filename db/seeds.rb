@@ -49,7 +49,7 @@ user = User.create!(
   # Build a post associated with the user (without saving it)
 post = user.posts.build(
     title: 'Your Post Title',
-    content: 'Your post content here'
+    content: 'Sloths, known for their leisurely pace and endearing charm, spend their days navigating treetops with deliberate slowness, embodying a serene and relaxed approach to life in the lush canopies of their rainforest habitats'
 )
   
   # Save the user and associated post
@@ -77,6 +77,17 @@ user.posts.create!(
   # Repost the first post by the same user
 user.reposts.create!(
     post: Post.first
+)
+
+user1.posts.create!(
+    title: 'My post',
+    content: 'Sloths, renowned for their unhurried pace of life, spend the majority of their time hanging upside down in trees and move so slowly that algae often grows on their fur, providing them with a natural camouflage. Despite their seemingly leisurely lifestyle, these fascinating creatures boast a unique adaptation for survival in the dense canopies of Central and South American rainforests.'
+)
+
+user2.posts.create!(
+    title: 'Post',
+    content: '
+    Sloths, recognized for their deliberate and leisurely movements, are arboreal mammals that have evolved to thrive in the treetops of tropical rainforests. Their slow-paced lifestyle not only conserves energy but also forms a symbiotic relationship with algae, creating a distinctive and effective form of camouflage on their fur.'
 )
 
 #Post.create!(
