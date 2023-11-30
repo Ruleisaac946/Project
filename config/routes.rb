@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index', as: 'home'
   get 'explore', to: 'explore#index', as: 'explore'
   get 'settings', to: 'settings#index', as: 'settings'
+  get 'home/comment', to: 'home#new_comment', as: 'comment'
   resource :settings, only: [:index, :update]
   post 'home', to: 'home#create'
   get 'home/new', to: 'home#new', as: 'new_post'

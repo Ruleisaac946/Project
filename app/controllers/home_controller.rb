@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
-    before_action :require_permission, except: [:index, :show, :new, :create]
+    before_action :require_permission, except: [:index, :show, :new, :create, :new_comment]
     def index 
         @posts = Post.order(created_at: :asc)
         # @individualPost = Post.find(params[:p])
@@ -30,5 +30,12 @@ class HomeController < ApplicationController
             flash[:error] = @post.errors.full_messages.join(', ')
             render :new, status: :unprocessable_entity
         end
+    end
+
+    def new_comment
+        # @user = User.find(params[:id])
+        # @post = Post.find(params[:id])
+        @comment = Comment.new 
+        render :comment 
     end
 end
