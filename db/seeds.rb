@@ -40,7 +40,7 @@ user2 = User.create!(
 
 # Create a user
 user = User.create!(
-    name: 'Your Name',
+    name: 'Ryan',
     email: 'unique_email@example.com',
     password: 'password',
     notification_preferences: 'Your notification preferences'
