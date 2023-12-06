@@ -39,7 +39,7 @@
 </script>
 
 <body>
-    <h1>This is the show page for a post! </h1>
+    <h1>Post details</h1>
 
     <p>
         <%= @post.content%>
@@ -48,6 +48,7 @@
     <div>
         <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
         <button><i class="bi bi-chat"></i></button>
+        <%= link_to '', comment_path(@post), class: 'bi bi-chat' %>
         <button><i class="bi bi-arrow-repeat"></i></button>
         <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
     </div>
@@ -55,6 +56,7 @@
     <div class="comments">
         <% @comments.each do |comment| %>
             <%= comment.content %>
+            <br>
         <% end %>
     </div>
 </body>
