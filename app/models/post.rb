@@ -18,6 +18,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Post < ApplicationRecord
+    has_one_attached :picture
     def self.search(search)
         if search 
             content = Post.find_by(content: search)

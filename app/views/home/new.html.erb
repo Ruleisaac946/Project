@@ -2,5 +2,6 @@
 <%= bootstrap_form_with model: @post, url: home_path, method: :post, data: {turbo: false } do |f|%>
     <%= f.text_field :title%>
     <%= f.text_field :content %>
+    <%= f.file_field :picture %>
     <%= f.submit %>
 <%end%>
