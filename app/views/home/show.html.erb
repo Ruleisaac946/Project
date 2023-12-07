@@ -10,6 +10,8 @@
     </p>
     
     <p>
+        <%= image_tag @post.picture if @post.picture.attached? %>
+    </p>
 
     <div>
         <button><i class="bi bi-heart"></i></button>

@@ -32,6 +32,7 @@
     <% @posts.each do |post| %>
         <div class = "post card mb-3">
             <%= post.content %>
+            <%= image_tag post.picture if post.picture.attached? %>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
                 <button><i class="bi bi-chat"></i></button>
