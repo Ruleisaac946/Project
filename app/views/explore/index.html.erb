@@ -23,8 +23,8 @@
 </head>
 <h1>This will be the explore page guys!</h1>
 <%= form_tag("/explore", method: "GET") do %>
-  <%= label_tag(:search_by_title, "Search by Title") %>
-  <%= text_field_tag(:search_by_title, params[:search_by_title]) %>
+  <%= label_tag(:search_by_user, "Search by User") %>
+  <%= text_field_tag(:search_by_user, params[:search_by_user]) %>
   <%= submit_tag("Search") %>
 <% end %>
 
