@@ -1,6 +1,10 @@
+<head>
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">LazyLounge</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,15 +13,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Leafy Links
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/explore">Explore Page</a></li>
@@ -44,6 +42,9 @@
                         class: "nav-link #{active_class(new_user_registration_path)} btn btn-link" %>
           </li>
         <% end %>
+        <li>
+          <div class='sloth-thumbnail'><%= image_tag 'sloth.jpg', class: 'img-fluid'%></div>
+        </li>
       </ul>
     </div>
   </div>

@@ -30,3 +30,15 @@ main {
 .alert-dismissible {
   padding-left: $alert-dismissible-padding-r;
 }
+
+.sloth-thumbnail{
+  margin-left: 55rem;
+  max-width: 8rem;
+  max-height: 8rem;
+  box-shadow: none;
+}
+
+.navbar-nav{
+  display: flex;
+  align-items: center;
+}
