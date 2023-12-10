@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post 'home', to: 'home#create'
   get 'home/new', to: 'home#new', as: 'new_post'
   get 'home/:id', to: 'home#show', as: 'post_show'
+  get 'home/:id/comments/new', to: 'comments#new', as: 'comment'
+  post  'home/:id', to: 'comments#create'
 end
 
 
