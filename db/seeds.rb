@@ -21,15 +21,7 @@ user2 = User.create!(
     password: 'password'
 )
 
-#User.create!(
-#    email:    'bob@email.com',
-#    password: 'password'
-#)
-   
-#User.create!(
- #   email:    'alice@email.com',
-  #  password: 'password'
-#)
+
 
 # Create a user
 # db/seeds.rb
@@ -40,7 +32,7 @@ user2 = User.create!(
 
 # Create a user
 user = User.create!(
-    name: 'Your Name',
+    name: 'Ryan',
     email: 'unique_email@example.com',
     password: 'password',
     notification_preferences: 'Your notification preferences'
@@ -79,9 +71,10 @@ user.reposts.create!(
     post: Post.first
 )
 
-user1.posts.create!(
+post_1 = Post.create!(
     title: 'My post',
-    content: 'Sloths, renowned for their unhurried pace of life, spend the majority of their time hanging upside down in trees and move so slowly that algae often grows on their fur, providing them with a natural camouflage. Despite their seemingly leisurely lifestyle, these fascinating creatures boast a unique adaptation for survival in the dense canopies of Central and South American rainforests.'
+    content: 'Sloths, renowned for their unhurried pace of life, spend the majority of their time hanging upside down in trees and move so slowly that algae often grows on their fur, providing them with a natural camouflage. Despite their seemingly leisurely lifestyle, these fascinating creatures boast a unique adaptation for survival in the dense canopies of Central and South American rainforests.',
+    user: user1
 )
 
 user2.posts.create!(
@@ -90,6 +83,11 @@ user2.posts.create!(
     Sloths, recognized for their deliberate and leisurely movements, are arboreal mammals that have evolved to thrive in the treetops of tropical rainforests. Their slow-paced lifestyle not only conserves energy but also forms a symbiotic relationship with algae, creating a distinctive and effective form of camouflage on their fur.'
 )
 
+comment1 = Comment.create!(
+    content: 'I love sloths so much. This was such a great post', 
+    user: user1 ,
+    post: post_1
+)
 #Post.create!(
  #   content: "Fascinated by sloths lately! Their unhurried lifestyle is strangely relatable. Picture embracing life at a sloth's pace—no rush, just pure tranquility. They're the zen masters of the animal kingdom. Hanging out in trees has never seemed so appealing!"
 #)
