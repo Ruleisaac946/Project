@@ -15,3 +15,7 @@
   .save-btn.active .bi-bookmark-fill {
     color: #ffd700; /* Set the filled icon color to match the background when active */
   }
+
+  .comments{
+    margin-top: 20px;
+  }

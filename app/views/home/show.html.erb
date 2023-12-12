@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <h1>Post details</h1>
+    <h1>Posted by: <%=@post.user.name %> </h1>
 
     <p>
         <%= @post.content%>
@@ -19,8 +19,10 @@
 
     <div class="comments">
         <% @comments.each do |comment| %>
-            <%= comment.content %>
-            <br>
-        <% end %>
+            <div class="post card mb-3">
+                <%= comment.content %>
+                <div>Posted by: <%= comment.user.name %></div>
+        </div>
     </div>
+    <% end %>
 </body>
