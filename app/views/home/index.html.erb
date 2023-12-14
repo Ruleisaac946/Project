@@ -5,22 +5,15 @@
 
 <body>
     <% @posts.each do |post| %>
-       <div class = "post card mb-3">
+        <div class = "post card mb-3">
             <%= post.content %>
             <div class="picture"><%= image_tag post.picture, class: 'img-fluid' if post.picture.attached? %></div>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
-
-                <%# <button><i class="bi bi-chat"></i></button> %>
                 <button class="bi bi-chat" onclick="window.location='<%= comment_path(post) %>'"></button>
+                <button><i class="bi bi-arrow-repeat"></i></button>
                 <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
                 <button class="bi bi-search" onclick="window.location='<%= post_show_path(post) %>'"></button>
-                <%= form_with(model: [post, Repost.new], url: create_repost_post_path(post), method: :post) do |form| %>
-                  <%= form.button '<i class="bi bi-arrow-repeat"></i>'.html_safe, type: 'submit', class: 'repost-btn' %>
-                <% end %>
-                <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
-                <%# <button><i class="bi bi-search"></i></button> %>
-                <%= link_to '', post_show_path(post), class: 'bi bi-search' %>
             </div>
             <div class = "user">
               <div>Posted by: <%=post.user.name%></div>
@@ -29,5 +22,3 @@
         </div>
     <% end %>
 </body>
-
-
