@@ -6,5 +6,12 @@ class NotificationsController < ApplicationController
         render :index
     end
 
+    def destroy
+        @notification = Notification.find(params[:id])
+        @notification.destroy
+        flash[:success] = 'Notification read'
+        redirect_to notifications_url, status: :see_other
+    end
+
 
 end
