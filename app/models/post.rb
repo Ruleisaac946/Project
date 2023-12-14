@@ -48,5 +48,20 @@ class Post < ApplicationRecord
     has_many :repost_users, through: :reposts, source: :user
     validates :title, presence: true
     # has_many :likes, as: :likeable
+
+    has_many :notifications, as: :notifiable, dependent: :destroy
+    after_create :create_notifications
+
+    def create_notifications
+        User.where.not(id: user_id).each do |user|
+          Notification.create(
+            recipient: user,
+            sender: user,
+            notifiable: self,
+            notifiable_type: 'Post',
+            content: "#{user.name} created a new post from post.rb: #{title}"
+          )
+        end
+      end
   
 end
