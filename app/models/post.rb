@@ -48,4 +48,6 @@ class Post < ApplicationRecord
     validates :title, presence: true
     # has_many :likes, as: :likeable
   
+
+    has_one_attached :picture
 end
