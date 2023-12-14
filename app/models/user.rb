@@ -43,6 +43,9 @@ class User < ApplicationRecord
   has_many :reposts
   has_many :reposted_posts, through: :reposts, source: :post
   
+  has_many :notifications
+  has_many :recieved_notifications, foreign_key: 'recipient_id', class_name: 'Notification'
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
         
@@ -57,3 +60,5 @@ class User < ApplicationRecord
     update(notification_preferences: preferences)
   end
 end
+
+

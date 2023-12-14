@@ -88,6 +88,19 @@ comment1 = Comment.create!(
     user: user1 ,
     post: post_1
 )
+
+# notifications for seeded files
+User.all.each do |user|
+    Post.all.each do |post|
+      Notification.create(
+        recipient: user,
+        sender: post.user, 
+        notifiable: post,
+        notification_type: :post,
+        content: "#{post.user.name} created a post from seeds: #{post.title}"
+      )
+    end
+  end
 #Post.create!(
  #   content: "Fascinated by sloths lately! Their unhurried lifestyle is strangely relatable. Picture embracing life at a sloth's pace—no rush, just pure tranquility. They're the zen masters of the animal kingdom. Hanging out in trees has never seemed so appealing!"
 #)

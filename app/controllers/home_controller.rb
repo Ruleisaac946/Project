@@ -32,6 +32,7 @@ class HomeController < ApplicationController
         @post = current_user.posts.build(params.require(:post).permit(:title, :content, :picture))
         if @post.save
             flash[:success] = 'Post has been created'
+            post_notify(@post)
             redirect_to home_url 
         else  
             flash.now[:error] = 'Post creation failed'
@@ -39,6 +40,19 @@ class HomeController < ApplicationController
             render :new, status: :unprocessable_entity
         end
     end
+
+    def post_notify(post)
+        User.all.each do |user|
+            Notification.create(
+                recipient: user,
+                sender: current_user,
+                notifiable: post,
+                notifiable_type: 'Post',
+                content: "#{current_user.name} created a new post: #{post.title}"
+            )
+        end
+    end
+        
 
     def new_comment
         # @user = User.find(params[:id])
