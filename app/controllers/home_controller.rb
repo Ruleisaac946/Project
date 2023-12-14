@@ -21,7 +21,7 @@ class HomeController < ApplicationController
 
     def create 
         # @post = Post.new(params.require(:post).permit(:content))
-        @post = current_user.posts.build(params.require(:post).permit(:title, :content))
+        @post = current_user.posts.build(params.require(:post).permit(:title, :content, :picture))
         if @post.save
             flash[:success] = 'Post has been created'
             redirect_to home_url 
