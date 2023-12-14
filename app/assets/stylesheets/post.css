@@ -1,3 +1,30 @@
-.post{
+.heart-btn {
+    color: #000; /* Default color for the heart button */
+  }
+  .heart-btn.active {
+    color: #ff0000; /* Red color for the active (liked) state */
+  }
+
+  .save-btn {
+    color: #000; /* Default color for the buttons */
+  }
+  .save-btn.active {
+    color: #ffd700; /* Yellow color for the active (saved) state */
     
-}
+  }
+  .save-btn.active .bi-bookmark-fill {
+    color: #ffd700; /* Set the filled icon color to match the background when active */
+  }
+
+  .comments{
+    margin-top: 20px;
+  }
+
+  .picture{
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  .setting{
+    margin-top: 2rem;
+  }

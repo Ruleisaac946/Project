@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
+  delete 'home/:id', to: 'home#destroy'
 end
 
 
