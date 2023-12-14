@@ -8,7 +8,11 @@
 
     <p>
         <%= @post.content%>
+    </p>
+    
     <p>
+        <%= image_tag @post.picture if @post.picture.attached? %>
+    </p>
 
     <div>
         <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
