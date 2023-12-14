@@ -11,7 +11,7 @@
     </p>
     
     <p>
-        <%= image_tag @post.picture if @post.picture.attached? %>
+        <div class="picture"><%= image_tag @post.picture, class:'img-fluid' if @post.picture.attached? %></div>
     </p>
 
     <div>

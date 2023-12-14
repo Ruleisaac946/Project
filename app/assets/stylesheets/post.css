@@ -19,3 +19,8 @@
   .comments{
     margin-top: 20px;
   }
+
+  .picture{
+    max-width: 100%;
+    max-height: auto;
+  }
