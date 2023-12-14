@@ -1,19 +1,83 @@
 <head>
+<<<<<<< HEAD
+  <%= stylesheet_link_tag 'post' %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <style>
+    .heart-btn {
+      color: #000; /* Default color for the heart button */
+    }
+
+    .heart-btn.active {
+      color: #ff0000; /* Red color for the active (liked) state */
+    }
+
+    .save-btn {
+      color: #000; /* Default color for the buttons */
+    }
+
+    .save-btn.active {
+      color: #ffd700; /* Yellow color for the active (saved) state */
+    }
+
+    .save-btn.active .bi-bookmark-fill {
+      color: #ffd700; /* Set the filled icon color to match the background when active */
+    }
+  </style>
+=======
     <%= stylesheet_link_tag 'post' %>
     <%= javascript_include_tag 'explore_page' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+>>>>>>> 3a7c899aa8835c1d36532727d95031bde0bc3b75
 </head>
-<h1>This will be the explore page guys!</h1>
-<%= form_tag("/explore", method: "GET") do %>
-  <%= label_tag(:search_by_user, "Search by User") %>
-  <%= text_field_tag(:search_by_user, params[:search_by_user]) %>
-  <%= submit_tag("Search") %>
-<% end %>
 
 <body>
-    <% @posts.each do |post| %>
-        <div class = "post card mb-3">
+  <h1>This is the explore page!</h1>
+
+  <%= form_tag("/explore", method: "GET") do %>
+    <%= label_tag(:search_by_user, "Search by User") %>
+    <%= text_field_tag(:search_by_user, params[:search_by_user]) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+  <% @posts.each do |post| %>
+    <div class = "post card mb-3">
             <%= post.content %>
+<<<<<<< HEAD
+            <div class="picture"><%= image_tag post.picture, class: 'img-fluid' if post.picture.attached? %></div>
+            <div class="butons">
+                <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
+
+                <%# <button><i class="bi bi-chat"></i></button> %>
+                <button class="bi bi-chat" onclick="window.location='<%= comment_path(post) %>'"></button>
+                <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
+                <button class="bi bi-search" onclick="window.location='<%= post_show_path(post) %>'"></button>
+                <%= form_with(model: [post, Repost.new], url: create_repost_post_path(post), method: :post) do |form| %>
+                  <%= form.button '<i class="bi bi-arrow-repeat"></i>'.html_safe, type: 'submit', class: 'repost-btn' %>
+                <% end %>
+            </div>
+    </div>
+  <% end %>
+
+  <script>
+    function toggleHeart(button) {
+      button.classList.toggle('active');
+      const heartIcon = button.querySelector('.bi-heart');
+      // Toggle between outline and filled heart icons
+      heartIcon.classList.toggle('bi-heart-fill', button.classList.contains('active'));
+    }
+
+    function toggleSave(button) {
+      button.classList.toggle('active');
+      const saveIcon = button.querySelector('.bi-bookmark');
+
+      // Toggle between outline and filled save icons
+      saveIcon.classList.toggle('bi-bookmark-fill', button.classList.contains('active'));
+    }
+  </script>
+</body>
+
+
+=======
             <div class="picture"><%= image_tag post.picture, class:'img-fluid' if post.picture.attached? %></div>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
@@ -25,3 +89,4 @@
         </div>
     <% end %>
 </body>
+>>>>>>> 3a7c899aa8835c1d36532727d95031bde0bc3b75

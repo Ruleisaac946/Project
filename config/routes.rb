@@ -17,6 +17,14 @@ Rails.application.routes.draw do
   get 'home/:id', to: 'home#show', as: 'post_show'
   get 'home/:id/comments/new', to: 'comments#new', as: 'comment'
   post  'home/:id', to: 'comments#create'
+
+  resources :posts do
+    member do
+      post 'create_repost'
+      root 'posts#index'
+    end
+  end
+
   delete 'home/:id', to: 'home#destroy'
 
   get 'notifications', to: 'notifications#index'

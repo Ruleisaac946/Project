@@ -64,4 +64,6 @@ class Post < ApplicationRecord
         end
       end
   
+
+    has_one_attached :picture
 end
