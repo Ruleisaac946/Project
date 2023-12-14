@@ -1,34 +1,39 @@
+<head>
+    <%= stylesheet_link_tag 'post' %>
+    <%= javascript_include_tag 'home_page' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
 <h1>Account Settings</h1>
 
 <%= form_for @user, url: settings_path, method: :patch, html: { multipart: true } do |f| %>
-  <div>
+  <div class="setting">
     <%= f.label :profile_picture %>
     <%= f.file_field :profile_picture %>
     <%= image_tag @user.profile_picture if @user.profile_picture.attached? %>
   </div>
 
-  <div>
+  <div class="setting">
     <%= f.label :cover_photo %>
     <%= f.file_field :cover_photo %>
     <%= image_tag @user.cover_photo if @user.cover_photo.attached? %>
   </div>
   
-  <div>
+  <div class="setting">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <div>
+  <div class="setting">
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
 
-  <div>
+  <div class="setting" >
     <%= f.label :notification_preferences %>
     <%= f.text_area :notification_preferences %>
   </div>
 
-  <div>
+  <div class="setting" >
     <%= f.submit 'Update Settings' %>
   </div>
 <% end %>

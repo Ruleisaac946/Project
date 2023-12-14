@@ -1,4 +1,5 @@
 <head>
+<<<<<<< HEAD
   <%= stylesheet_link_tag 'post' %>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <style>
@@ -22,6 +23,11 @@
       color: #ffd700; /* Set the filled icon color to match the background when active */
     }
   </style>
+=======
+    <%= stylesheet_link_tag 'post' %>
+    <%= javascript_include_tag 'explore_page' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+>>>>>>> 3a7c899aa8835c1d36532727d95031bde0bc3b75
 </head>
 
 <body>
@@ -36,6 +42,7 @@
   <% @posts.each do |post| %>
     <div class = "post card mb-3">
             <%= post.content %>
+<<<<<<< HEAD
             <div class="picture"><%= image_tag post.picture, class: 'img-fluid' if post.picture.attached? %></div>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
@@ -70,3 +77,16 @@
 </body>
 
 
+=======
+            <div class="picture"><%= image_tag post.picture, class:'img-fluid' if post.picture.attached? %></div>
+            <div class="butons">
+                <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
+                <button class="bi bi-chat" onclick="window.location='<%= comment_path(post) %>'"></button>
+                <button><i class="bi bi-arrow-repeat"></i></button>
+                <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
+                <button class="bi bi-search" onclick="window.location='<%= post_show_path(post) %>'"></button>
+            </div>
+        </div>
+    <% end %>
+</body>
+>>>>>>> 3a7c899aa8835c1d36532727d95031bde0bc3b75
