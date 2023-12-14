@@ -17,6 +17,7 @@
             </div>
             <div class = "user">
               <div>Posted by: <%=post.user.name%></div>
+              <%= link_to 'View Profile', user_path(post.user) %>
             </div>
         </div>
     <% end %>
