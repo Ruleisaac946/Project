@@ -48,7 +48,10 @@
     <div>
         <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
         <%= link_to '', comment_path(@post), class: 'bi bi-chat' %>
-        <button><i class="bi bi-arrow-repeat"></i></button>
+        <%= form_with(model: [@post, Repost.new], url: create_repost_post_path(@post), method: :post) do |form| %>
+          <%= form.button '<i class="bi bi-arrow-repeat"></i>'.html_safe, type: 'submit', class: 'repost-btn' %>
+        <% end %>
+
         <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
     </div>
 
