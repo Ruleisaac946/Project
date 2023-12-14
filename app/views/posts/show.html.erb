@@ -1,6 +1,0 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-
-<%= form_with(model: [@post, @repost], url: create_repost_post_path(@post), method: :post) do |form| %>
-  <%= form.submit 'Repost' %>
-<% end %>
