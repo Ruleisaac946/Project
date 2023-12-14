@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # rebase check 
@@ -17,8 +18,11 @@ Rails.application.routes.draw do
   get 'home/:id/comments/new', to: 'comments#new', as: 'comment'
   post  'home/:id', to: 'comments#create'
   delete 'home/:id', to: 'home#destroy'
+
   get 'notifications', to: 'notifications#index'
   delete 'notifications/:id', to: 'notifications#destroy', as: 'read_notifications'
+  get 'users/show'
+  resources :users
 end
 
 
