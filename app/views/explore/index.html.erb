@@ -23,8 +23,8 @@
 </head>
 <h1>This will be the explore page guys!</h1>
 <%= form_tag("/explore", method: "GET") do %>
-  <%= label_tag(:search_by_title, "Search by Title") %>
-  <%= text_field_tag(:search_by_title, params[:search_by_title]) %>
+  <%= label_tag(:search_by_user, "Search by User") %>
+  <%= text_field_tag(:search_by_user, params[:search_by_user]) %>
   <%= submit_tag("Search") %>
 <% end %>
 
@@ -35,9 +35,10 @@
             <%= image_tag post.picture if post.picture.attached? %>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
-                <button><i class="bi bi-chat"></i></button>
+                <%= link_to '', comment_path(post), class: 'bi bi-chat' %>
                 <button><i class="bi bi-arrow-repeat"></i></button>
                 <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
+                <%= link_to '', post_show_path(post), class: 'bi bi-search' %>
             </div>
         </div>
     <% end %>

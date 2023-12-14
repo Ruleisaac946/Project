@@ -29,9 +29,15 @@
             <%= image_tag post.picture if post.picture.attached? %>
             <div class="butons">
                 <button class="heart-btn" onclick="toggleHeart(this)"><i class="bi bi-heart"></i></button>
-                <button><i class="bi bi-chat"></i></button>
+                <%# <button><i class="bi bi-chat"></i></button> %>
+                <%= link_to '', comment_path(post), class: 'bi bi-chat' %>
                 <button><i class="bi bi-arrow-repeat"></i></button>
                 <button class="save-btn" onclick="toggleSave(this)"><i class="bi bi-bookmark"></i></button>
+                <%# <button><i class="bi bi-search"></i></button> %>
+                <%= link_to '', post_show_path(post), class: 'bi bi-search' %>
+            </div>
+            <div class = "user">
+              <div>Posted by: <%=post.user.name%></div>
             </div>
         </div>
     <% end %>
